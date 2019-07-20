@@ -2,6 +2,7 @@ package org.elastos.dma.dmademo.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.elastos.dma.dmademo.R;
+import org.elastos.dma.dmademo.activity.DetailActivity;
 import org.elastos.dma.dmademo.bean.Game;
 
 import java.util.ArrayList;
@@ -38,7 +40,16 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.HomeFe
 
     @Override
     public void onBindViewHolder(@NonNull HomeFeedAdapter.HomeFeedViewHolder viewHolder, int i) {
-
+        final Game game = mGames.get(i);
+//        viewHolder.cover.setBackground(R.drawable.bg_alert_b);
+        viewHolder.name.setText(game.getName());
+        viewHolder.content.setText(game.getProduction());
+        viewHolder.bg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DetailActivity.launch(mContext, game);
+            }
+        });
     }
 
     @Override
@@ -51,11 +62,14 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.HomeFe
         TextView name;
         TextView content;
         ImageView cover;
-
+        CardView bg;
 
         public HomeFeedViewHolder(View itemView) {
             super(itemView);
-
+            name = itemView.findViewById(R.id.name);
+            content = itemView.findViewById(R.id.content);
+            cover = itemView.findViewById(R.id.cover);
+            bg = itemView.findViewById(R.id.cardview);
         }
     }
 }
