@@ -21,4 +21,26 @@ public interface ITicketDao {
 	 * @param ticket
 	 */
 	void addTicket(Ticket ticket);
+	
+	/**
+	 * 查询待上架票务信息
+	 * @return
+	 */
+	List<Ticket> qryTicketStateInitList();
+	
+	/**
+	 * 更新票务信息的状态
+	 * @param ticket
+	 */
+	void updateTicketState(Ticket ticket);
+	
+	/**
+	 * 更新票务庫存信息
+	 * @param ticket
+	 */
+	void updateTicketCount(Ticket ticket);
+	
+	
+	Ticket qryTicketByTicketId(Ticket ticket);
+	
 }

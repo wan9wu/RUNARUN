@@ -13,7 +13,28 @@
 	
     <!-- 查询票务活动列表  -->
     <select id="listAll" resultType="com.oukele.bookshop.ssm.entity.Ticket">
-        select * from ticket
+        SELECT * FROM TICKET WHERE REMARK=2
     </select>
-
+    
+    <!-- 查询票务状态为1的待上架票务信息  -->
+    <select id="qryTicketStateInitList" resultType="com.oukele.bookshop.ssm.entity.Ticket">
+        SELECT * FROM TICKET WHERE REMARK=1
+    </select>
+    
+    <!-- 更新票务信息状态为已上架  remark=2 -->
+    <update id="updateTicketState" parameterType="com.oukele.bookshop.ssm.entity.Ticket">
+        UPDATE TICKET SET REMARK=#{remark} where HASHADDRESS=#{hashaddress}
+    </update>
+	
+	<!-- 更新票務庫存數量 -->
+	<update id="updateTicketCount" parameterType="com.oukele.bookshop.ssm.entity.Ticket">
+        update ticket set COUNT=count-1 where id=#{ticketid}
+    </update>
+	
+	
+	<select id="qryTicketByTicketId" resultType="com.oukele.bookshop.ssm.entity.Ticket">
+        SELECT * FROM TICKET WHERE ID=#{id}
+    </select>
+	
+	
 </mapper>
