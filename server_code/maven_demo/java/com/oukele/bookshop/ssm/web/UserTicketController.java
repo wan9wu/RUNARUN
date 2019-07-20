@@ -1,5 +1,6 @@
 package com.oukele.bookshop.ssm.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -8,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.oukele.bookshop.ssm.entity.Ticket;
 import com.oukele.bookshop.ssm.entity.UserTicket;
+import com.oukele.bookshop.ssm.service.TicketService;
 import com.oukele.bookshop.ssm.service.UserTicketService;
 
 /**
@@ -28,7 +31,10 @@ public class UserTicketController {
 
 	@Autowired
 	private UserTicketService userTicketService;
-
+	
+	@Autowired
+	private TicketService ticketService;
+	
 	/**
 	 * 活动报名
 	 * 
@@ -61,11 +67,19 @@ public class UserTicketController {
 		userTicket.setCaddress(caddress);
 		userTicket.setPrivatekey(privatekey);
 		userTicket.setPublickey(publickey);
-		userTicket.setRemark(remark);
+		userTicket.setRemark("1");
+		
+		/**
+		 *数据库事务一致性后续加入
+		 */
 		userTicketService.addUserTicket(userTicket);
+		Ticket ticket = new Ticket();
+		ticket.setId(ticketdid);
+		ticketService.updateTicketCount(ticket);
 		logger.info("****************活动报名成功****************");
 	}
-
+	
+	
 	/**
 	 * 查询票务信息列表
 	 * 
@@ -73,12 +87,21 @@ public class UserTicketController {
 	 */
 	@RequestMapping(value = "/qryUserTicketList")
 	@ResponseBody
-	public List<UserTicket> qryUserTicketList(String did) {
+	public List<Ticket> qryUserTicketList(String did) {
 		logger.info("查询用户did为【" + did + "】的用户参加活动信息列表");
 		UserTicket userTicket = new UserTicket();
 		userTicket.setDid(did);
+		List<Ticket> l = new ArrayList<Ticket>();
 		List<UserTicket> list = userTicketService.listTicketByDid(userTicket);
+		Ticket ticket = new Ticket();
+		if(list != null && list.size()>0){
+			for (int i = 0; i < list.size(); i++) {
+				ticket.setId(list.get(i).getTicketdid());
+				Ticket tk = ticketService.qryTicketByTicketId(ticket);
+				l.add(tk);
+			}
+		}
 		logger.info("****************持有活动列表查询完成****************");
-		return list;
+		return l;
 	}
 }

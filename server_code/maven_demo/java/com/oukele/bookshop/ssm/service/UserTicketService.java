@@ -24,5 +24,18 @@ public interface UserTicketService {
 	 * @param ticket
 	 */
 	void addUserTicket(UserTicket userticket);
-
+	
+	
+	/**
+	 * 查询区块链待更新记录
+	 * 
+	 * @return
+	 */
+	List<UserTicket> listUserTicketStatus();
+	
+	/**
+	 * 更新持票状态
+	 * @param userticket
+	 */
+	void updateUserTicketState(UserTicket userticket);
 }

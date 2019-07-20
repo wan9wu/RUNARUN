@@ -26,8 +26,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-base-1.0.0-beta.jar"/>
-	<classpathentry kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-service-1.0.0-beta.jar"/>
-	<classpathentry kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-utility-1.0.0-beta.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-base-1.0.0-beta.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-service-1.0.0-beta.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Github/python/DMA-SDK/libs/java/dma-utility-1.0.0-beta.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/dma-base-1.0.0-beta.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/dma-service-1.0.0-beta.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/dma-utility-1.0.0-beta.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

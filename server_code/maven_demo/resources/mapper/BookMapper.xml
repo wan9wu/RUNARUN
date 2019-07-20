@@ -8,7 +8,7 @@
 
     <!-- 这里的id 是 接口中的方法名  -->
     <select id="listAll" resultType="com.oukele.bookshop.ssm.entity.Book">
-        select * from book
+        SELECT * FROM BOOK
     </select>
 
 </mapper>

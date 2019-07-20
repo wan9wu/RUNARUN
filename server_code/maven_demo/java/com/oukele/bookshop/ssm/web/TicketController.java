@@ -2,14 +2,12 @@ package com.oukele.bookshop.ssm.web;
 
 import java.util.List;
 
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.oukele.bookshop.ssm.entity.Ticket;
 import com.oukele.bookshop.ssm.service.TicketService;
 
@@ -64,6 +62,11 @@ public class TicketController {
 		ticket.setHashaddress(hashaddress);
 		ticket.setTrestaddress(trestaddress);
 		ticket.setContractaddress(contractaddress);
+		if(remark == null || remark == ""){
+			//本次HackThon采用同步方式，调用新增接口，证明活动已在区块链发布成功
+			ticket.setRemark("2");
+		}
+		ticket.setRemark(remark);
 		ticketService.addTicket(ticket);
 		logger.info("****************票务信息新增成功****************");
 	}
@@ -75,7 +78,7 @@ public class TicketController {
 	 */
 	@RequestMapping(value = "/qryTicketList")
 	@ResponseBody
-	public List<Ticket> getJsonList() {
+	public List<Ticket> qryTicketList() {
 		logger.info("****************查询票务信息列表****************");
 		List<Ticket> list = ticketService.listAll();
 		logger.info("****************票务信息列表查询成功****************");

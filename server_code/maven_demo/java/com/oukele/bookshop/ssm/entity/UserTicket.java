@@ -7,17 +7,31 @@ package com.oukele.bookshop.ssm.entity;
  * 
  */
 public class UserTicket {
-
+	//用户ID
 	private String userid;
 	private String username;
 	private String did;
+	//票务ID
 	private String ticketdid;
+	//HASH
 	private String haddress;
+	//托管HASH
 	private String taddress;
+	//合约地址
 	private String caddress;
 	private String publickey;
 	private String privatekey;
-	/*持票状态 1：持有中     2：转让中    3：已转让    */
+	private Ticket ticket;
+	/*持票状态  
+	 * 
+	 * 	0:购买中  
+	 *  1：持有中    
+	 *  2：转让中    
+	 *  3：已转让
+	 *  4：赠送中
+	 *  5：赠送票
+	 *  
+	 * */
 	private String remark;
 
 	public UserTicket() {
@@ -26,7 +40,7 @@ public class UserTicket {
 
 	public UserTicket(String userid, String username, String did,
 			String ticketdid, String haddress, String taddress,
-			String caddress, String publickey, String privatekey, String remark) {
+			String caddress, String publickey, String privatekey, String remark, Ticket ticket) {
 		this.userid = userid;
 		this.username = username;
 		this.did = did;
@@ -36,6 +50,16 @@ public class UserTicket {
 		this.publickey = publickey;
 		this.privatekey = privatekey;
 		this.remark = remark;
+		this.ticket = ticket;
+	}
+	
+	
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
 	}
 
 	public String getUserid() {

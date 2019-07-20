@@ -95,7 +95,7 @@ public class EthWalletTest {
      */
     @Test
     public void tokenBalance() throws Exception {
-        String owner = "0xA258f950203b46A4036CE4c71BC64CE1d010EaaC";//地址
+        String owner = "0xa2177aaa258a453036dc4939a6661f8756ef33e6";//地址
         String contractAddress = "0xd08f65e3895750201c620b1951079e4ee12a251a";//代币地址
         String tokenBalance = ethWalletService.tokenBalance(owner, contractAddress);
         System.out.println(tokenBalance);
@@ -107,8 +107,8 @@ public class EthWalletTest {
      */
     @Test
     public void transfer() throws Exception {
-        String privateKey="8194cfe0650f004785b176f83a88af84ed73087a72609174605ef87054272811";
-        String _to="0x6e55aaebaefe953931fcfc251079b874484e69ed";
+        String privateKey="39c6062d3a8698ae22d3cf3aacddf60315b2e404ee30db9053a79997e86807d2";
+        String _to="0xe0b379049a791d776f933e1840e936453682a863";
         String _value="100";
 
         String hash = ethWalletService.transfer(privateKey, _to,_value,gasPrice,gasLimit);
@@ -122,9 +122,9 @@ public class EthWalletTest {
      */
     @Test
     public void tokenTransfer() throws Exception {
-        String contractAddress = "0xd08f65e3895750201c620b1951079e4ee12a251a";//代币地址
-        String privateKey="f4b7957d7f11b014a77ad80e5d03d1c732f51c08ec7925c3d6175e19d099d832";
-        String _to="0x21f017BA0937426e8d68417b59658e2DC74c8936";
+        String contractAddress = "0xa2177aaa258a453036dc4939a6661f8756ef33e6";//代币地址
+        String privateKey="39c6062d3a8698ae22d3cf3aacddf60315b2e404ee30db9053a79997e86807d2";
+        String _to="0xe0b379049a791d776f933e1840e936453682a863";
         BigDecimal _value=new BigDecimal("10");
         BigInteger gasPrice=BigInteger.valueOf(1000000000);
         BigInteger gasLimit=BigInteger.valueOf(60000);

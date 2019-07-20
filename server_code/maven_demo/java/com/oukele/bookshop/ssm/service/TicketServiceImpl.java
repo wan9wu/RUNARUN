@@ -26,7 +26,25 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public List<Ticket> qryTicketStateInitList() {
+		//查询状态为1的票务信息列表
+		return ticketDao.qryTicketStateInitList();
+	}
+
+	@Override
+	public void updateTicketState(Ticket ticket) {
+		//更新票务信息状态为2，已上架状态
+		ticketDao.updateTicketState(ticket);
+	}
+
+	@Override
+	public void updateTicketCount(Ticket ticket) {
+		ticketDao.updateTicketCount(ticket);
+		
+	}
+
+	@Override
+	public Ticket qryTicketByTicketId(Ticket ticket) {
 		// TODO Auto-generated method stub
-		return null;
+		return ticketDao.qryTicketByTicketId(ticket);
 	}
 }

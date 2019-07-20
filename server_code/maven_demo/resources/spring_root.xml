@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/context 
        http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task 
 	   http://www.springframework.org/schema/task/spring-task-4.1.xsd">
 
     <!-- 扫描 service 包下面使用@Component/@Service/@Repository/@Controller 注解的类 将其实例化，放入容器中   -->
@@ -56,5 +56,5 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="basePackage" value="com.oukele.bookshop.ssm.dao"/>
     </bean>
-
+	
 </beans>
