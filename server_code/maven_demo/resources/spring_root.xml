@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:contxt="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/task 
+	   http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+    <!-- 扫描 service 包下面使用@Component/@Service/@Repository/@Controller 注解的类 将其实例化，放入容器中   -->
+    <contxt:component-scan base-package="com.oukele.bookshop.ssm.service" />
+    <contxt:component-scan base-package="com.oukele.bookshop.ssm.task" />
+	
+	<!--加载jdbc资源文件-->
+    <contxt:property-placeholder location="classpath:jdbc.properties"/>
+	
+	<!-- 设置定时任务 -->
+	<task:annotation-driven/>
+	
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <!--加载数据库驱动-->
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <!--连接的数据库字符串-->
+        <property name="url" value="${jdbc.url}"/>
+        <!--账号、密码-->
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+         <!-- 初始化连接大小 -->  
+        <property name="initialSize" value="${initialSize}"></property>  
+        <!-- 连接池最大数量 -->  
+        <property name="maxActive" value="${maxActive}"></property>  
+        <!-- 连接池最大空闲 -->  
+        <property name="maxIdle" value="${maxIdle}"></property>  
+        <!-- 连接池最小空闲 -->  
+        <property name="minIdle" value="${minIdle}"></property>  
+        <!-- 获取连接最大等待时间 -->  
+        <property name="maxWait" value="${maxWait}"></property>  
+    </bean>
+
+    <!--配置mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--实例化数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis的配置-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--映射mapper文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+    
+    <!-- 映射 数据访问层 ( dao ) 中的接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.oukele.bookshop.ssm.dao"/>
+    </bean>
+
+</beans>
