@@ -97,7 +97,6 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
                 {
                     case 0:{
                         BigDecimal bigDecimal=new BigDecimal(SystemConfig.ethBalance);
-                        ;
                         tv_eth_blance.setText(bigDecimal.setScale(6,BigDecimal.ROUND_DOWN).toString());
                     }
 
