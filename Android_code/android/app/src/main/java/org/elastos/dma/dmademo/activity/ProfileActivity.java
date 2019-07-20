@@ -19,6 +19,8 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("个人资料");
+        toolbar.setTitleTextColor(0xff000000);
         toolbar.setNavigationIcon(R.drawable.round_arrow_back_24);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

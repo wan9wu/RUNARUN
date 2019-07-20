@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.elastos.dma.dmademo.R;
 

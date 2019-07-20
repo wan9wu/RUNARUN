@@ -1,6 +1,7 @@
 package org.elastos.dma.dmademo.tool;
 
 import org.elastos.dma.dmademo.bean.Game;
+import org.elastos.dma.dmademo.bean.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,16 @@ public class MockUtil {
             games.add(game);
         }
         return games;
+    }
+
+    public static List<Message> mockMessage() {
+        List<Message> messageList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            Message message = new Message();
+            message.setTitle("我的消息");
+            message.setContent("关于2018上海国际马拉松赛违规参赛者的处罚公告");
+        }
+        return messageList;
     }
 
 }

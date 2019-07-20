@@ -90,8 +90,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_start">StartActivity</string>
-    <string name="title_activity_message">MessageActivity</string>
-    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_message">我的消息</string>
+    <string name="title_activity_profile">个人信息</string>
     <string name="title_activity_verify">VerifyActivity</string>
     <string name="title_activity_my_ticket">已购票务</string>
 
