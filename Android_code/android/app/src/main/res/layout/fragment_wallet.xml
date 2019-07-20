@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+<include layout="@layout/topbar"></include>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/wdqb_ela_bg"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:gravity="center"
+            android:id="@+id/lin_wallet_ela"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <ImageView
+                    android:src="@drawable/qb_icon_ela"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/img_metrowallet_logo"
+
+
+                    />
+                <TextView
+                    android:id="@+id/tv_metrowallet_name"
+                    android:text="ELA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    style="@style/black_00_28"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_ela_blance"
+                        android:text="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        style="@style/black_00_32"
+                        android:textSize="20sp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/tv_wallet_address_ela"
+                    android:text="aaaaaaaaaaaaaaadddddddaaaddddddd"
+                    android:singleLine="true"
+                    android:ellipsize="middle"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    style="@style/black_00_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/img_copy_ela"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/qb_icon_copy"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_wallet_dma"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/wdqb_dma_bg"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <ImageView
+                    android:src="@drawable/qb_icon_eth"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="TODO"
+                    />
+                <TextView
+                    android:text="ETH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    style="@style/black_00_28"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_dma_blance"
+                        android:text="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        style="@style/black_00_32"
+                        android:textSize="20sp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_wallet_address"
+                    android:text="ssssssssssssssdddddddddddddssssssssssssssssssss"
+                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:singleLine="true"
+                    android:ellipsize="middle"
+                    style="@style/black_00_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/img_copy_eth"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/qb_icon_copy"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

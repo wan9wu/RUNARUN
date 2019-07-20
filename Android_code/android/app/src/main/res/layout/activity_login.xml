@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_login_title"
+                    style="@style/black_00_48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_login" />
+
+                <TextView
+                    android:id="@+id/tv_did"
+                    style="@style/black_00_28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/title_create_account_notice" />
+
+                <LinearLayout
+                    android:id="@+id/lin_login_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_userName"
+                        android:layout_width="250dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_shap_gray_border"
+                        android:hint="@string/input_username"
+                        android:textSize="14dp"
+                        android:text="" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <EditText
+                            android:id="@+id/edt_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="43dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_shap_gray_border"
+                            android:hint="@string/password_not_length"
+                            android:inputType="textPassword"
+                            android:minWidth="210dp"
+                            android:textSize="14dp"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_password_re"
+                        android:layout_width="250dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_shap_gray_border"
+                        android:hint="@string/wallet_confirm_passowrd"
+                        android:inputType="textPassword"
+                        android:textSize="14dp"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/btn_login"
+                        style="@style/white_32_normal"
+                        android:layout_width="250dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_shap_green"
+                        android:gravity="center"
+                        android:text="@string/title_login" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_import"
+                style="@style/green_33cc66_32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="导入助记词" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

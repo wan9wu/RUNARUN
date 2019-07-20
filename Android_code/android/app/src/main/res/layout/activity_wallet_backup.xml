@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<include layout="@layout/topbar"></include>
+    <LinearLayout
+        android:id="@+id/lin_wallet_backup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+
+        >
+        <ImageView
+            android:contentDescription="TODO" android:src="@drawable/qb_icon_bf"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="35dp"/>
+        <TextView
+            android:id="@+id/tv_wallet_backupdesc"
+            android:text="@string/wallet_backup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/gray33_26_normal"
+            android:textSize="20sp"
+            android:layout_marginTop="32dp"/>
+        <TextView
+            android:text="@string/wallet_backup_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/gray66_28_normal"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="7dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_wallat_backup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/backup_wallet"
+            android:gravity="center"
+            style="@style/white_32_normal"
+            android:background="@drawable/bg_shap_green"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lin_wallet_words"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="75dp"
+        >
+        <TextView
+            android:id="@+id/tv_wallat_backup_title"
+            android:text="@string/copy_your_mnemonic"
+            style="@style/gray33_30_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tv_wallat_backup_content"
+            android:text="@string/mnemonic_important"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/gray66_28_normal"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="5dp"/>
+        <TextView
+            android:id="@+id/tv_wallat_words"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            style="@style/gray66_30_normal"
+            android:background="@drawable/bg_shap_gray"
+            android:enabled="true"
+            android:textIsSelectable="true"
+            android:focusable="true"
+            android:longClickable="true"
+            android:padding="15dp"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+</LinearLayout>

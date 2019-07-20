@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/topbar_left"></include>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DID："
+                style="@style/gray33_30_normal"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/tv_did"
+                    android:text=""
+                    android:ellipsize="middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    style="@style/gray33_30_normal"/>
+                <ImageView
+                    android:id="@+id/img_copy"
+                    android:src="@drawable/qb_icon_copy_gray"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"/>
+
+            </LinearLayout>
+
+
+
+        </TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"
+            />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/tr_wallet_backup"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/backup_wallet"
+                style="@style/gray33_30_normal"
+                />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                >
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="TODO" android:src="@drawable/icon_arrow_r"
+                    />
+            </LinearLayout>
+
+        </TableRow>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_f0f0f0"/>
+
+    </LinearLayout>
+</ScrollView>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/lin_commit"
+        android:background="#90000000"
+android:visibility="gone"
+        >
+
+            <LinearLayout
+                android:id="@+id/lin_alert_pwd_bg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/bg_alert_border"
+               >
+
+                    <TextView
+                        android:text="@string/input_password"
+                        android:lineSpacingMultiplier="1.2"
+                        style="@style/gray33_30_normal"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/edt_wallet_pwd"
+                        android:text=""
+                        android:lineSpacingMultiplier="1.2"
+                        style="@style/gray33_30_bold"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:inputType="textPassword"
+                        android:background="@drawable/bg_shap_gray_border"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="25dp"
+                        >
+                        <Button
+                            android:id="@+id/btn_pwd_cencel"
+                            android:text="@string/wallet_cancel"
+                            style="@style/blue577_32_normal"
+                            android:textColor="@color/green_33cc66"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:background="@drawable/bg_shap_gray_border"
+                            android:textAllCaps="false"
+                            />
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="fill_parent" />
+                        <Button
+                            android:id="@+id/btn_pwd_ensure"
+                            android:text="@string/wallet_confirm"
+                            style="@style/white_32_normal"
+                            android:textSize="16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:background="@drawable/bg_shap_green"
+                            android:textAllCaps="false"
+                            />
+                    </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+</LinearLayout>

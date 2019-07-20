@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<include layout="@layout/topbar"></include>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/green_33cc66"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false" android:gravity="center">
+            <LinearLayout
+                android:id="@+id/tab_word"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_words"
+                    android:text="@string/wallet_mnemonic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/white_30_normal"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/title_words_"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_999999"
+                   />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tab_keystore"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/title_keystore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/blue_89a0eb"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/title_keystore_"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_999999"
+                    android:visibility="invisible"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tab_privatekey"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/title_privatekey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray_666666"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/title_privatekey_"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_999999"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_words"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@drawable/bg_shap_gray_border">
+            <EditText
+                android:id="@+id/edt_wallet_words"
+                android:hint="@string/mnemonic_placeholder"
+                android:textColorHint="@color/gray_999999"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                style="@style/gray_99_26_normal"
+                android:gravity="top"
+                android:background="@null"/>
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_keystore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+       android:visibility="gone"
+        >
+        <TextView
+            android:text="keystore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/gray66_24_normal"
+            android:layout_marginBottom="15dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/bg_shap_gray_border">
+            <EditText
+                android:id="@+id/edt_wallet_keystore"
+                android:hint="keystore"
+                android:textColorHint="@color/gray_999999"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                style="@style/gray_99_26_normal"
+                android:gravity="top"
+                android:background="@null"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_privatekey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/bg_shap_gray_border">
+            <EditText
+                android:hint="privatekey"
+                android:id="@+id/edt_wallet_privatekey"
+                android:textColorHint="@color/gray_999999"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                style="@style/gray_99_26_normal"
+                android:background="@null"
+                android:gravity="top"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <EditText
+            android:id="@+id/edt_wallet_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:hint="@string/wallet_password"
+            android:textColorHint="@color/gray_666666"
+            style="@style/gray33_30_normal"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"></TextView>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/lin_words_pwd">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <EditText
+            android:id="@+id/edt_wallet_repwd"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+
+            android:inputType="textPassword"
+            android:hint="@string/wallet_confirm_passowrd"
+            android:textColorHint="@color/gray_666666"
+            style="@style/gray33_30_normal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:visibility="gone"
+        >
+        <EditText
+            android:id="@+id/edt_wallet_pwdnote"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="@string/password_hint"
+            android:textColorHint="@color/gray_666666"
+            style="@style/gray33_30_normal"
+            android:background="@null" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"></TextView>
+    </LinearLayout>
+</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tv_wallet_import"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/wallet_start_import"
+        android:gravity="center"
+        style="@style/white_32_normal"
+        android:background="@drawable/bg_shap_green"/>
+
+
+
+</LinearLayout>

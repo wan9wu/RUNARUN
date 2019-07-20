@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/white"
+    >
+        <TextView
+            android:id="@+id/topbar_title"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:maxWidth="250dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            style="@style/black_17_normal"
+            android:gravity="center"
+            />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/topbar_back"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:visibility="visible">
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:contentDescription="TODO" android:src="@drawable/btn_back"
+            android:layout_width="35dp"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/topbar_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        style="@style/gray33_34_normal"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/green_33cc66"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/btn_add"
+        android:layout_marginLeft="25dp"
+        android:contentDescription="TODO" android:src="@drawable/btn_addid"
+        android:layout_width="35dp"
+        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        />
+    <ImageView
+        android:id="@+id/img_sys"
+        android:layout_marginLeft="25dp"
+        android:contentDescription="TODO" android:src="@drawable/btn_sys"
+        android:layout_width="35dp"
+        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_topbar_line"
+        android:layout_width="match_parent"
+       android:layout_alignParentBottom="true"
+        android:layout_height="1dp"
+        android:background="@drawable/line"
+        />
+</RelativeLayout>

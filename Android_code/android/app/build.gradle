@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "org.elastos.dma.dmademo"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        ndk {
+            abiFilters 'armeabi-v7a'//`, 'x86', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+        configurations.all {
+            resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+
+    //JSON解析
+    implementation 'com.alibaba:fastjson:1.2.47'
+    implementation files('libs/dma-utility-1.0.0-beta.jar')
+    implementation files('libs/dma-message-1.0.20.aar')
+
+    implementation files('libs/dma-service-1.0.0-beta.aar')
+    implementation files('libs/dma-base-1.0.0-beta.aar')
+
+    //加载图片
+    implementation 'com.github.bumptech.glide:glide:4.0.0'
+    implementation 'commons-lang:commons-lang:2.6'
+    implementation 'commons-logging:commons-logging:1.2'
+    implementation 'com.alibaba:fastjson:1.2.47'
+    implementation 'org.web3j:core:3.3.1-android'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.ctiao:ndkbitmap-x86:0.9.21'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.guava:guava:24.1-jre'
+    implementation 'com.madgag.spongycastle:core:1.58.0.0'
+    implementation('com.journeyapps:zxing-android-embedded:3.5.0') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.github.ipfs:java-ipfs-api:v1.2.2'
+    implementation 'com.lovedise:permissiongen:0.0.6'
+}
