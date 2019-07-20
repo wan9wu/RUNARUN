@@ -115,6 +115,94 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/wdqb_ela_bg"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:gravity="center"
+            android:id="@+id/lin_wallet_did"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <ImageView
+                    android:src="@drawable/qb_icon_ela"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:adjustViewBounds="true"
+
+
+                    />
+                <TextView
+                    android:id="@+id/tv_metrowallet_didname"
+                    android:text="DID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    style="@style/black_00_28"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_did_balance"
+                        android:text="0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        style="@style/black_00_32"
+                        android:textSize="20sp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/tv_wallet_address_did"
+                    android:text="aaaaaaaaaaaaaaadddddddaaaddddddd"
+                    android:singleLine="true"
+                    android:ellipsize="middle"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    style="@style/black_00_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/img_copy_did"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/qb_icon_copy"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lin_wallet_dma"
@@ -128,8 +216,6 @@
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
             android:gravity="center">
-
-
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

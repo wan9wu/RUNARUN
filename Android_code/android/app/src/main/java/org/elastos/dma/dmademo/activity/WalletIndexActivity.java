@@ -35,8 +35,8 @@ import java.math.BigDecimal;
 
 public class WalletIndexActivity extends AppCompatActivity implements View.OnClickListener{
     private LinearLayout topbar_back,lin_wallet_ela,lin_wallet_dma;
-    private TextView tv_wallet_address,tv_wallet_address_ela,tv_ela_blance, tv_eth_blance;
-    ImageView img_copy_eth,img_copy_ela;
+    private TextView tv_wallet_address,tv_wallet_address_did,tv_wallet_address_ela,tv_ela_blance,tv_did_balance, tv_eth_blance;
+    ImageView img_copy_eth,img_copy_ela,img_copy_did;
     SwipeRefreshLayout swipe_refresh;
     private Activity mainActivity;
     private ElaWalletService elaWalletService;
@@ -67,17 +67,22 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
         tv_eth_blance =findViewById(R.id.tv_dma_blance);
 
         tv_wallet_address=findViewById(R.id.tv_wallet_address);
+        tv_wallet_address_did=findViewById(R.id.tv_wallet_address_did);
         tv_wallet_address_ela=findViewById(R.id.tv_wallet_address_ela);
         tv_ela_blance=findViewById(R.id.tv_ela_blance);
+        tv_did_balance=findViewById(R.id.tv_did_balance);
         tv_eth_blance =findViewById(R.id.tv_dma_blance);
         img_copy_eth=findViewById(R.id.img_copy_eth);
         img_copy_ela=findViewById(R.id.img_copy_ela);
+        img_copy_did=findViewById(R.id.img_copy_did);
         img_copy_eth.setOnClickListener(this);
         img_copy_ela.setOnClickListener(this);
         tv_wallet_address.setText(SystemConfig.ethAddress);
         tv_wallet_address_ela.setText(SystemConfig.address);
+        tv_wallet_address_did.setText(SystemConfig.did);
         tv_ela_blance.setText(SystemConfig.ELABalance+"");
         tv_eth_blance.setText( SystemConfig.ethBalance+"");
+        tv_did_balance.setText( SystemConfig.didBalance+"");
 
 
         lin_wallet_ela =findViewById(R.id.lin_wallet_ela) ;
@@ -108,6 +113,13 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
 
                     break;
 
+                    case 2:{
+                        BigDecimal bigDecimal=new BigDecimal(SystemConfig.didBalance);
+                        tv_did_balance.setText( bigDecimal.setScale(6,BigDecimal.ROUND_DOWN).toString());
+                    }
+
+                    break;
+
                     case 3:
 
                         break;
@@ -121,6 +133,7 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
         };
         getElaBalance();
         getEthBalance();
+        getDIDBalance();
     }
     private void getEthBalance(){
         //查询DMA和ETH账户余额
@@ -194,6 +207,33 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
             ;
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+    private void getDIDBalance(){
+        new AsyncTask<Void, Void, Integer>() {
+            @Override
+            protected Integer doInBackground(Void... params) {
+                try {
+                    ElaWalletService didWalletService=new ElaWalletService(NodeClient.didip);
+                    String jsonResult = didWalletService.balance(SystemConfig.address);
+                    if(jsonResult!=null){
+                        SystemConfig.didBalance=Double.parseDouble(jsonResult);
+                        elabalance=jsonResult;
+                        handler.sendEmptyMessage(1);
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                return 0;
+            }
+
+            protected void onPostExecute(Integer result) {
+
+            }
+
+            ;
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
     @Override
     public void onClick(View v) {
 
@@ -217,6 +257,16 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
 
             }
             break;
+            case R.id.tv_wallet_address_did:
+            {
+                Intent intent=new Intent(mainActivity,WalletAddressActivity.class);
+                intent.putExtra("address",SystemConfig.did);
+                SystemConfig.linkType="DID";
+                mainActivity.startActivity(intent);
+
+
+            }
+            break;
 
             case R.id.img_copy_eth:
             {
@@ -231,6 +281,14 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
                 ClipboardManager cm = (ClipboardManager) mainActivity.getSystemService(Context.CLIPBOARD_SERVICE);
                 // 将文本内容放到系统剪贴板里。
                 cm.setText(SystemConfig.address);
+                Waiter.alertErrorMessage(getString(R.string.copy_success),mainActivity);
+            }
+            break;
+            case R.id.img_copy_did:
+            {
+                ClipboardManager cm = (ClipboardManager) mainActivity.getSystemService(Context.CLIPBOARD_SERVICE);
+                // 将文本内容放到系统剪贴板里。
+                cm.setText(SystemConfig.did);
                 Waiter.alertErrorMessage(getString(R.string.copy_success),mainActivity);
             }
             break;
@@ -257,6 +315,21 @@ public class WalletIndexActivity extends AppCompatActivity implements View.OnCli
                 walletInfo.setTokenAddress("ELA");
                 walletInfo.setWalletAddress(SystemConfig.address);
                 SystemConfig.linkType="ELA";
+                Intent intent=new Intent(this, WalletSendActivity.class);
+                Bundle b=new Bundle();
+                b.putSerializable("obj", walletInfo);
+                intent.putExtras(b);
+                startActivity(intent);
+            }
+            break;
+            case R.id.lin_wallet_did:
+            {
+                WalletInfo walletInfo=new WalletInfo();
+                walletInfo.setName("DID");
+                walletInfo.setBalance(SystemConfig.ELABalance+"");
+                walletInfo.setTokenAddress("DID");
+                walletInfo.setWalletAddress(SystemConfig.address);
+                SystemConfig.linkType="DID";
                 Intent intent=new Intent(this, WalletSendActivity.class);
                 Bundle b=new Bundle();
                 b.putSerializable("obj", walletInfo);

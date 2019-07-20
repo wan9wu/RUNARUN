@@ -19,6 +19,7 @@ public class SystemConfig {
     public static String ethAddress="";
     public static double ethBalance=0;
     public static double ELABalance=0;
+    public static double didBalance=0;
     public static String privatekey="";
     public static String elaPrivatekey="";
     public static BigInteger gasPrice= BigInteger.valueOf(20000000000l);
