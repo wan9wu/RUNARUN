@@ -256,6 +256,11 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
     </style>
+    <style name="blue022bb5_54_normal">
+        <item name="android:textColor">@color/blue_022bb5</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 
     <style name="blue108_32_normal">
         <item name="android:textColor">@color/blue_108ee9</item>

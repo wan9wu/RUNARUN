@@ -13,6 +13,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,6 +24,7 @@ import com.bumptech.glide.Glide;
 
 import org.elastos.dma.dmademo.R;
 import org.elastos.dma.dmademo.config.SystemConfig;
+import org.elastos.dma.dmademo.net.HttpEngine;
 import org.elastos.dma.dmademo.tool.LQRPhotoSelectUtils;
 import org.elastos.dma.dmademo.tool.NodeClient;
 import org.elastos.dma.dmademo.tool.Waiter;
@@ -36,10 +38,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
+import okhttp3.Response;
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +57,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     String avatarUrl="";
     private final int SAVE_IMG_SUCCESS=1;
     private final int START_SUCCESS=2;
+    private final int START_IPROGRESS=3;
     ETHMerchantService ethMerchantService;
+    Boolean isPost=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,8 +112,13 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                     case SAVE_IMG_SUCCESS:
 
                         break;
+                    case START_IPROGRESS:
+                        Waiter.initProgressDialog(mainActivity,"活动发布中...");
+                        break;
                     case START_SUCCESS:{
-
+                        Intent intent = new Intent();
+                        intent.setClass(mainActivity, StartActivity.class);
+                        startActivity(intent);
                         Waiter.alertErrorMessage("创建成功",mainActivity);
                         //跳转到成功页
                     }
@@ -212,13 +223,18 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         if(!Waiter.CheckEditText(edt_name)||!Waiter.CheckEditText(edt_production)||!Waiter.CheckEditText(edt_qm_price)||!Waiter.CheckEditText(edt_qm_num)){
             return;
         }
-
+        if(isPost){
+            return;
+        }
+        isPost=true;
         new AsyncTask<Void, Void, Integer>(){
             @Override
             protected Integer doInBackground(Void... params) {
                 Map<String, Object> map=new HashMap<String, Object>();
                 JsonResult<ETHMerchantServiceImpl.DeployResult> jsonResult=ethMerchantService.deploy(SystemConfig.privatekey,NodeClient.gasPrice,NodeClient.gasLimit,name,production,"");
-               if(jsonResult!=null&&jsonResult.getSuccess()&&jsonResult.getData()!=null){
+
+                isPost=false;
+                if(jsonResult!=null&&jsonResult.getSuccess()&&jsonResult.getData()!=null){
                    String assetAddress=jsonResult.getData().getAssetAddress();
                    String platformAddress=jsonResult.getData().getPlatformAddress();
 
@@ -226,10 +242,53 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                    System.out.println("发布合约platformAddress===="+platformAddress);
                    if(assetAddress!=null&&platformAddress!=null){
                        //提交本地网络请求
-
+//
+                       deployStorage(name,production,condition,qm_price,qm_num,"0","",assetAddress,platformAddress);
                    }
                }
 
+                return 1;
+            }
+            protected void onPostExecute(Integer result) {
+                if(result!=null&&result.intValue()==1){
+                 //   handler.sendEmptyMessage(START_SUCCESS);
+                }
+            };
+        }.execute();
+    }
+
+    private void deployStorage(String name, String production,String condition, String price, String count,  String remark, String hashaddress,String trestaddress,String contractaddress){
+
+
+        /*票務狀態： 默认-0     已发布-1   已上架-2 */
+
+        new AsyncTask<Void, Void, Integer>(){
+            @Override
+            protected Integer doInBackground(Void... params) {
+                Map<String, String> map=new HashMap<String, String>();
+                map.put("id",UUID.randomUUID().toString());
+                map.put("name",name);
+                map.put("production",production);
+                map.put("condition",condition);
+                map.put("price",price);
+                map.put("count",count);
+                map.put("remark",remark);
+                map.put("hashaddress",hashaddress);
+                map.put("trestaddress",trestaddress);
+                map.put("contractaddress",contractaddress);
+                Response response = HttpEngine.sendGetRequest("/maven_demo/addTicket.do", map);
+                try {
+                    if (response == null) {
+                        return null;
+                    } else {
+                        String responseStr = response.body().string();
+
+                        Log.i("Result", responseStr);
+                        return 1;
+                    }
+                } catch (IOException e) {
+
+                }
                 return 1;
             }
             protected void onPostExecute(Integer result) {
