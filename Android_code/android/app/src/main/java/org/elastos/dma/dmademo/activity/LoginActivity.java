@@ -103,7 +103,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                     break;
                 case 2:
                 {
-                    Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                    Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }

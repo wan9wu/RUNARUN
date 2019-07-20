@@ -1,12 +1,13 @@
 package org.elastos.dma.dmademo.activity.wallet;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,9 +36,9 @@ import java.util.Map;
 
 
 /**
- * Created by xianxian on 2016/12/1.
+ * Created by xianxian on 2019/7/20.
  */
-public class WalletSendActivity extends Activity implements View.OnClickListener {
+public class WalletSendActivity extends AppCompatActivity implements View.OnClickListener {
 
     View topView;
     LinearLayout topbar_back,lin_next,lin_sure,lin_commit,lin_commit_back,lin_gasfee;
@@ -63,11 +64,20 @@ public class WalletSendActivity extends Activity implements View.OnClickListener
         mContext=WalletSendActivity.this;
         ethWalletService=NodeClient.getClient();
         elaWalletService=NodeClient.getElaServiceClient();
-        topbar_back=(LinearLayout)findViewById(R.id.topbar_back);
+//        topbar_back=(LinearLayout)findViewById(R.id.topbar_back);
         wallet_send_sys=(ImageView) findViewById(R.id.img_sys);
         wallet_send_sys.setVisibility(View.VISIBLE);
-        topbar_title=findViewById(R.id.topbar_title);
-        topbar_title.setText(getString(R.string.wallet_send));
+//        topbar_title=findViewById(R.id.topbar_title);
+//        topbar_title.setText(getString(R.string.wallet_send));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.round_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         img_sure_back=(ImageView) findViewById(R.id.img_sure_back);
         lin_commit_back=(LinearLayout) findViewById(R.id.lin_commit_back);
         wallet_send_amount=(TextView) findViewById(R.id.wallet_send_amount);
@@ -82,7 +92,7 @@ public class WalletSendActivity extends Activity implements View.OnClickListener
         tv_gasfee_0=(TextView) findViewById(R.id.tv_gasfee_0);
         tv_fromaddress=(TextView) findViewById(R.id.tv_fromaddress);
         tv_toaddress=(TextView) findViewById(R.id.tv_toaddress);
-        topbar_title=(TextView) findViewById(R.id.topbar_title);
+//        topbar_title=(TextView) findViewById(R.id.topbar_title);
 
         lin_next=(LinearLayout) findViewById(R.id.lin_next);
         lin_sure=(LinearLayout) findViewById(R.id.lin_sure);
@@ -96,7 +106,7 @@ public class WalletSendActivity extends Activity implements View.OnClickListener
         wallet_send_next.setOnClickListener(this);
         wallet_send_sure.setOnClickListener(this);
         wallet_send_commit.setOnClickListener(this);
-        topbar_back.setOnClickListener(this);
+//        topbar_back.setOnClickListener(this);
         lin_commit_back.setOnClickListener(this);
         img_sure_back.setOnClickListener(this);
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_start_activity"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="发起活动" />
+
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/round_message"
+            android:title="消息" />
+        <item
+            android:id="@+id/nav_ticket"
+            android:icon="@drawable/round_receipt"
+            android:title="已购票" />
+        <item
+            android:id="@+id/nav_verify"
+            android:icon="@drawable/round_assignment"
+            android:title="资质证明" />
+        <item
+            android:id="@+id/nav_activity"
+            android:icon="@drawable/round_flag"
+            android:title="我的活动" />
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/round_payment"
+            android:title="钱包" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/round_settings"
+            android:title="设置" />
+
+
+    </group>
+
+
+</menu>

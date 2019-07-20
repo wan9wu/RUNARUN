@@ -23,6 +23,7 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <!-- ****对话框部分 begin**** -->
     <!-- @android:style/Theme.Dialog -->
@@ -404,6 +405,7 @@
         <item name="android:textStyle">normal</item>
 
     </style>
+
     <style name="black_00_26">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">13sp</item>
@@ -504,5 +506,10 @@
     <style name="AppBaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppBaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppBaseTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
 </resources>

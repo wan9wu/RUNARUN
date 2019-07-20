@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,7 +33,7 @@ import java.math.BigDecimal;
  * 钱包首页
  */
 
-public class WalletIndexActivity extends Activity implements View.OnClickListener{
+public class WalletIndexActivity extends AppCompatActivity implements View.OnClickListener{
     private LinearLayout topbar_back,lin_wallet_ela,lin_wallet_dma;
     private TextView tv_wallet_address,tv_wallet_address_ela,tv_ela_blance, tv_eth_blance;
     ImageView img_copy_eth,img_copy_ela;
@@ -44,18 +46,23 @@ public class WalletIndexActivity extends Activity implements View.OnClickListene
     private boolean isPost=false;
     Dialog dialog;
     WalletInfo obj;
+    private Toolbar mToolbar;
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_wallet);
+
+        mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        mToolbar.setTitleTextColor(0xFF002BB5);
+        mToolbar.setNavigationIcon(R.drawable.round_arrow_back_24);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mainActivity = WalletIndexActivity.this;
-        topbar_back=findViewById(R.id.topbar_back);
-        TextView topbar_title=findViewById(R.id.topbar_title);
-        topbar_title.setText(getString(R.string.title_wallet));
-        topbar_back.setVisibility(View.VISIBLE);
-        topbar_back.setOnClickListener(this);
-        TextView tv_topbar_line=findViewById(R.id.tv_topbar_line);
-        tv_topbar_line.setVisibility(View.GONE);
 
         tv_eth_blance =findViewById(R.id.tv_dma_blance);
 
@@ -115,7 +122,6 @@ public class WalletIndexActivity extends Activity implements View.OnClickListene
         };
         getElaBalance();
         getEthBalance();
-
     }
     private void getEthBalance(){
         //查询DMA和ETH账户余额
@@ -193,11 +199,6 @@ public class WalletIndexActivity extends Activity implements View.OnClickListene
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.topbar_back:{
-                mainActivity.finish();
-            }
-            break;
-
             case R.id.tv_wallet_address:
             {
                 Intent intent=new Intent(mainActivity,WalletAddressActivity.class);
@@ -268,9 +269,16 @@ public class WalletIndexActivity extends Activity implements View.OnClickListene
 
 
     }
+
+    public static void launch(Context context) {
+        Intent intent = new Intent();
+        intent.setClass(context, WalletIndexActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-
+        mToolbar.setTitle("钱包");
     }
 }

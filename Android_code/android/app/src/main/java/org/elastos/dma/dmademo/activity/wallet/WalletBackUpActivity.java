@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.elastos.dma.dmademo.R;
+import org.elastos.dma.dmademo.activity.HomeActivity;
 import org.elastos.dma.dmademo.activity.MainActivity;
 import org.elastos.dma.dmademo.config.SystemConfig;
 
@@ -85,7 +86,7 @@ public class WalletBackUpActivity extends Activity implements View.OnClickListen
             case R.id.topbar_back:
           Intent intent;
                 if(!SystemConfig.haswallet&&words!=null&&words.length()>0){
-                    intent=new Intent(this,MainActivity.class);
+                    intent=new Intent(this, HomeActivity.class);
                     startActivity(intent);
                 }
                 finish();

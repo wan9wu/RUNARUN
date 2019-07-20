@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PersistableBundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,7 @@ import java.io.OutputStream;
  * Created by xianxian on 2017/4/12.
  */
 
-public class CustomScanActivity extends Activity implements DecoratedBarcodeView.TorchListener,View.OnClickListener { // 实现相关接口
+public class CustomScanActivity extends AppCompatActivity implements DecoratedBarcodeView.TorchListener,View.OnClickListener { // 实现相关接口
     // 添加一个按钮用来控制闪光灯，同时添加两个按钮表示其他功能，先用Toast表示
     Button swichLight;
     DecoratedBarcodeView mDBV;

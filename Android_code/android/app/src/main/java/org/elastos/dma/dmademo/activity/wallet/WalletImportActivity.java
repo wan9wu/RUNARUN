@@ -16,6 +16,7 @@ import org.elastos.dma.base.entity.did.DIDAccount;
 import org.elastos.dma.base.entity.ela.ElaAccount;
 import org.elastos.dma.base.entity.eth.EthAccount;
 import org.elastos.dma.dmademo.R;
+import org.elastos.dma.dmademo.activity.HomeActivity;
 import org.elastos.dma.dmademo.activity.LoginActivity;
 import org.elastos.dma.dmademo.activity.MainActivity;
 import org.elastos.dma.dmademo.config.SystemConfig;
@@ -100,7 +101,7 @@ public class WalletImportActivity extends Activity implements View.OnClickListen
                         LoginActivity.instance.finish();
                     }
                     if(!SystemConfig.haswallet&&SystemConfig.ethAddress!=null&&SystemConfig.ethAddress.length()>0){
-                        Intent intent=new Intent(WalletImportActivity.this,MainActivity.class);
+                        Intent intent=new Intent(WalletImportActivity.this, HomeActivity.class);
                         startActivity(intent);
                     }
                     finish();
