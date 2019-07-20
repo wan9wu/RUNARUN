@@ -1,0 +1,121 @@
+﻿.ax_default {
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  color:#333333;
+  text-align:center;
+  line-height:normal;
+}
+._一级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+._二级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+._三级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:18px;
+  text-align:left;
+}
+._四级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+._五级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  text-align:left;
+}
+._六级标题 {
+  font-family:'ArialMT', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:10px;
+  text-align:left;
+}
+.label {
+  font-size:14px;
+  text-align:left;
+}
+._文本段落 {
+  text-align:left;
+}
+._流程形状 {
+}
+.box_1 {
+}
+.box_3 {
+}
+.image {
+}
+.placeholder {
+}
+.button {
+}
+.primary_button {
+  color:#FFFFFF;
+}
+.box_2 {
+}
+.refs-design-material {
+  font-family:'NotoSansCJKsc-Regular', 'Noto Sans CJK SC';
+  font-weight:400;
+  font-style:normal;
+}
+.shape {
+  font-family:'ArialMT', 'Arial';
+  font-weight:normal;
+  font-style:normal;
+  font-size:13px;
+  color:#333333;
+  text-align:center;
+  line-height:normal;
+}
+.image1 {
+  color:#000000;
+}
+.horizontal_line {
+  color:#FFFFFF;
+}
+.text_area {
+  color:#000000;
+  text-align:left;
+}
+.line {
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.html_button {
+  text-align:center;
+}
+.table_cell {
+}
+.snapshot {
+}
+.refs-webm-wechat {
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+}
+.refs-design-apple {
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+}
