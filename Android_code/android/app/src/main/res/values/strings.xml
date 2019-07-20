@@ -71,6 +71,10 @@
     <string name="input_password">输入密码</string>
     <string name="wallet_cancel">取消</string>
     <string name="wallet_confirm">确定</string>
+    <string name="photo_soruce"> 图片来源</string>
+    <string name="photo_local"> 选择本地图片</string>
+    <string name="photo_camera">拍照</string>
+
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

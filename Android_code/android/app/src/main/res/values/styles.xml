@@ -405,6 +405,12 @@
         <item name="android:textStyle">normal</item>
 
     </style>
+    <style name="black_00_18">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:textStyle">normal</item>
+
+    </style>
 
     <style name="black_00_26">
         <item name="android:textColor">@color/black</item>
