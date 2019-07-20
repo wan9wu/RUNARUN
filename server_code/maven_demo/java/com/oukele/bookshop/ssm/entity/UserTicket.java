@@ -10,6 +10,7 @@ public class UserTicket {
 	//用户ID
 	private String userid;
 	private String username;
+	private String name;//ticket name
 	private String did;
 	//票务ID
 	private String ticketdid;
@@ -40,7 +41,7 @@ public class UserTicket {
 
 	public UserTicket(String userid, String username, String did,
 			String ticketdid, String haddress, String taddress,
-			String caddress, String publickey, String privatekey, String remark, Ticket ticket) {
+			String caddress, String publickey, String privatekey, String remark, Ticket ticket,String name) {
 		this.userid = userid;
 		this.username = username;
 		this.did = did;
@@ -51,9 +52,17 @@ public class UserTicket {
 		this.privatekey = privatekey;
 		this.remark = remark;
 		this.ticket = ticket;
+		this.name = name;
 	}
 	
-	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Ticket getTicket() {
 		return ticket;
 	}

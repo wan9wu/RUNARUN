@@ -81,6 +81,106 @@ public class UserTicketController {
 	
 	
 	/**
+	 * 轉增持有票务
+	 * @param userid
+	 * @param username
+	 * @param did
+	 * @param transferdid
+	 * @param ticketdid
+	 * @param haddress
+	 * @param taddress
+	 * @param caddress
+	 * @param publickey
+	 * @param privatekey
+	 * @param remark
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/transferUserTicket")
+	@ResponseBody
+	public void transferUserTicket(String userid, String username, String did,String transferdid,
+			String ticketdid, String haddress, String taddress,
+			String caddress, String publickey, String privatekey, String remark)
+			throws Exception {
+		logger.info(("用户:[" + username + "]转增票务[" + ticketdid + "]活动"));
+		UserTicket userTicket = new UserTicket();
+		userTicket.setUserid(userid);
+		userTicket.setUsername(username);
+		userTicket.setDid(transferdid);
+		userTicket.setTicketdid(ticketdid);
+		userTicket.setHaddress(haddress);
+		userTicket.setTaddress(taddress);
+		userTicket.setCaddress(caddress);
+		userTicket.setPrivatekey(privatekey);
+		userTicket.setPublickey(publickey);
+		userTicket.setRemark("6");//转让持有
+		
+		/**
+		 *数据库事务一致性后续加入
+		 */
+		userTicketService.addUserTicket(userTicket);
+		userTicket.setRemark("7");//已转让
+		userTicket.setDid(did);
+		userTicketService.updateUserTicketState(userTicket);
+		logger.info("****************票务转增成功****************");
+	}
+	
+	/**
+	 * 轉售持有票務
+	 * @param userid
+	 * @param username
+	 * @param did
+	 * @param ticketdid
+	 * @param haddress
+	 * @param taddress
+	 * @param caddress
+	 * @param remark
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/salesUserTicket")
+	@ResponseBody
+	public void salesUserTicket(String userid, String username, String did,
+			String ticketdid, String haddress, String taddress,
+			String caddress, String remark)
+			throws Exception {
+		logger.info(("用户:[" + username + "]售卖票务[" + ticketdid + "]活动"));
+		UserTicket userTicket = new UserTicket();
+		userTicket.setUserid(userid);
+		userTicket.setUsername(username);
+		userTicket.setDid(did);
+		userTicket.setTicketdid(ticketdid);
+		userTicket.setHaddress(haddress);
+		userTicket.setTaddress(taddress);
+		userTicket.setCaddress(caddress);
+		userTicket.setRemark("3");//转让中
+		userTicketService.updateUserTicketState(userTicket);
+		logger.info("****************票务转增成功****************");
+	}
+	
+	/**
+	 * 轉售列表
+	 * @param ticketid
+	 * @return
+	 */
+	@RequestMapping(value = "/qrySalesTicketList")
+	@ResponseBody
+	public List<UserTicket> qrySalesTicketList(String ticketid) {
+		logger.info("查询用户did为【" + ticketid + "】的用户参加活动信息列表");
+		UserTicket userTicket = new UserTicket();
+		userTicket.setTicketdid(ticketid);
+		List<UserTicket> list = userTicketService.listTicketByTicketId(userTicket);
+		Ticket ticket = new Ticket();
+		if(list != null && list.size()>0){
+			for (int i = 0; i < list.size(); i++) {
+				ticket.setId(list.get(i).getTicketdid());
+				Ticket tk = ticketService.qryTicketByTicketId(ticket);
+				list.get(i).setName(tk.getName());
+			}
+		}
+		logger.info("****************持有活动列表查询完成****************");
+		return list;
+	}
+	
+	/**
 	 * 查询票务信息列表
 	 * 
 	 * @return

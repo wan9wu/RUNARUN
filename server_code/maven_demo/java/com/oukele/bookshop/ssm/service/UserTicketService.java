@@ -17,6 +17,14 @@ public interface UserTicketService {
 	 * @return
 	 */
 	List<UserTicket> listTicketByDid(UserTicket userticket);
+	
+	/**
+	 * 转售列表
+	 * @param userticket
+	 * @return
+	 */
+	List<UserTicket> listTicketByTicketId(UserTicket userticket);
+	
 
 	/**
 	 * 用户参加票务活动
