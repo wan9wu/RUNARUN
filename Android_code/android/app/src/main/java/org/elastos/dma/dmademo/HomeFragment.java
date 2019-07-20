@@ -8,13 +8,14 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.fastjson.JSON;
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSONException;
 
 import org.elastos.dma.dmademo.adapter.HomeFeedAdapter;
 import org.elastos.dma.dmademo.bean.Game;
@@ -22,7 +23,6 @@ import org.elastos.dma.dmademo.net.HttpEngine;
 import org.elastos.dma.dmademo.tool.MockUtil;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Response;
@@ -94,11 +94,16 @@ public class HomeFragment extends Fragment {
                 return null;
             }
             protected void onPostExecute(String returnJson) {
-                if (returnJson == null) {
+                if (TextUtils.isEmpty(returnJson)) {
                     mAdapter.setGames(MockUtil.mockData());
                 } else {
-                    List<Game> result = JSON.parseArray(returnJson, Game.class);
-                    mAdapter.setGames(result);
+                    try {
+                        List<Game> result = JSON.parseArray(returnJson, Game.class);
+                        mAdapter.setGames(result);
+                    } catch (JSONException e) {
+                        mAdapter.setGames(MockUtil.mockData());
+                    }
+
                 }
             };
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

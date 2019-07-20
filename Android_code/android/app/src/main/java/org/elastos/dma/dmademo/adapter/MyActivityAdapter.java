@@ -47,12 +47,14 @@ public class MyActivityAdapter extends RecyclerView.Adapter<MyActivityAdapter.My
                 DetailActivity.launch(mContext, game);
             }
         });
+
     }
 
     @Override
     public int getItemCount() {
         return games.size();
     }
+
 
     public static class MyActivityViewHolder extends RecyclerView.ViewHolder {
 
@@ -67,6 +69,7 @@ public class MyActivityAdapter extends RecyclerView.Adapter<MyActivityAdapter.My
             title = item.findViewById(R.id.item_activity_title);
             location = item.findViewById(R.id.item_activity_location);
             bg = item.findViewById(R.id.my_activity_bg);
+
         }
     }
  }

@@ -89,7 +89,7 @@
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_verify">VerifyActivity</string>
-    <string name="title_activity_my_ticket">MyTicketActivity</string>
+    <string name="title_activity_my_ticket">已购票务</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
