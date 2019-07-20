@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import org.elastos.dma.dmademo.adapter.HomeFeedAdapter;
 import org.elastos.dma.dmademo.bean.Game;
 import org.elastos.dma.dmademo.net.HttpEngine;
+import org.elastos.dma.dmademo.tool.MockUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,17 +74,6 @@ public class HomeFragment extends Fragment {
         getGames();
     }
 
-    private List<Game> mockData() {
-        List<Game> games = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Game game = new Game();
-            game.setName("马拉松");
-            game.setProduction("关于2018上海国际马拉松赛违规参赛者的处罚公告. 2018/12/03. 2018上海国际马拉松赛前20名成绩公示");
-            games.add(game);
-        }
-        return games;
-    }
-
     private void getGames() {
         new AsyncTask<Void, Void, String>(){
             @Override
@@ -105,7 +95,7 @@ public class HomeFragment extends Fragment {
             }
             protected void onPostExecute(String returnJson) {
                 if (returnJson == null) {
-                    mAdapter.setGames(mockData());
+                    mAdapter.setGames(MockUtil.mockData());
                 } else {
                     List<Game> result = JSON.parseArray(returnJson, Game.class);
                     mAdapter.setGames(result);

@@ -34,7 +34,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.MyActivity"
-            android:label="@string/title_activity_my"
+            android:label=" @string/title_activity_my"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
