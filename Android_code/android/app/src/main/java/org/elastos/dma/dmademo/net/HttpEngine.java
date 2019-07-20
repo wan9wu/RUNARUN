@@ -10,9 +10,9 @@ import okhttp3.Response;
 public class HttpEngine {
 
     private static OkHttpClient sClient = new OkHttpClient();
-    private static String sBaseURL = "";
+    private static String sBaseURL = "http://10.0.1.77:8080/";
 
-    public static Response sendGetRequest(String api, Map<String, String> params, ResponseCallback callback) {
+    public static Response sendGetRequest(String api, Map<String, String> params) {
         HttpUrl.Builder httpBuilder = HttpUrl.parse(sBaseURL + api).newBuilder();
         if (params != null) {
             for(Map.Entry<String, String> param : params.entrySet()) {

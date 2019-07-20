@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 映射 接口 IBookDao -->
+<mapper namespace="com.oukele.bookshop.ssm.dao.ITicketDao">
+	
+	<!-- 添加票务项目 -->
+    <insert id="addTicket" parameterType="com.oukele.bookshop.ssm.entity.Ticket">
+        INSERT INTO TICKET VALUES(#{id},#{name},#{production},#{condition},#{price},#{count},#{remark},#{hashaddress},#{trestaddress},#{contractaddress})
+    </insert>
+	
+    <!-- 查询票务活动列表  -->
+    <select id="listAll" resultType="com.oukele.bookshop.ssm.entity.Ticket">
+        select * from ticket
+    </select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 映射 接口 IBookDao -->
+<mapper namespace="com.oukele.bookshop.ssm.dao.IBookDao">
+
+    <!-- 这里的id 是 接口中的方法名  -->
+    <select id="listAll" resultType="com.oukele.bookshop.ssm.entity.Book">
+        select * from book
+    </select>
+
+</mapper>
