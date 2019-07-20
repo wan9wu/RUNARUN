@@ -23,12 +23,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
         <activity
+            android:name=".activity.DetailActivity"
+            android:label="@string/title_activity_detial"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
             android:name=".activity.SearchActivity"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppBaseTheme.NoActionBar"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.MyActivity"
-            android:label="@string/title_activity_my"
+            android:label=" @string/title_activity_my"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -53,6 +59,11 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.StartActivity"
+            android:label="@string/title_activity_start"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />/>
+        <activity
+            android:name=".activity.ResultActivity"
             android:label="@string/title_activity_start"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />

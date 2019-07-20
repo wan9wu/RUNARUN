@@ -10,20 +10,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import org.elastos.dma.dmademo.R;
+import org.elastos.dma.dmademo.bean.Game;
 
-public class MessageActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_detial);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.round_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    public static void launch(Context context) {
+    public static void launch(Context context, Game game) {
         Intent intent = new Intent();
-        intent.setClass(context, MessageActivity.class);
+        intent.setClass(context, DetailActivity.class);
         context.startActivity(intent);
     }
 

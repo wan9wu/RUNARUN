@@ -7,5 +7,371 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.StartActivity"
     tools:showIn="@layout/activity_start">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
+
+            <TextView
+                style="@style/black_00_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标题" />
+
+            <EditText
+                android:id="@+id/edt_name"
+                style="@style/gray66_28_normal"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
+
+            <TextView
+                style="@style/black_00_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="简称" />
+
+            <EditText
+                android:id="@+id/edt_production"
+                style="@style/gray66_28_normal"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
+
+            <TextView
+                style="@style/black_00_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="详细介绍" />
+
+            <EditText
+                android:id="@+id/edt_condition"
+                style="@style/gray66_28_normal"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom">
+
+            <TextView
+                style="@style/black_00_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="票种"/>
+        </TableRow>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:text="全马票"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/black_00_28"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:text="半马票"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/black_00_28"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:text="5公里"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/black_00_28"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shap_blue_border"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_qm_price"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        style="@style/black_00_18"
+                        android:background="@drawable/edit_bg_border"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ETH"
+                        style="@style/black_00_18" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_qm_num"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        style="@style/black_00_18"
+                        android:background="@drawable/edit_bg_border"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量"
+                        style="@style/black_00_18" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/check_qm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/black_00_18" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全马完赛证明"
+                        style="@style/black_00_18" />
+                </TableRow>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shap_blue_border"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_bm_price"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        style="@style/black_00_18"
+                        android:background="@drawable/edit_bg_border" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ETH"
+                        style="@style/black_00_18"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_bm_num"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        style="@style/black_00_18"
+                        android:background="@drawable/edit_bg_border" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量"
+                        style="@style/black_00_18" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/check_bm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全马完赛证明"
+                        style="@style/black_00_18" />
+                </TableRow>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shap_blue_border"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_five_price"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/edit_bg_border"
+                        style="@style/black_00_18" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ETH"
+                        style="@style/black_00_18"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_five_num"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        style="@style/black_00_18"
+                        android:background="@drawable/edit_bg_border"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量"
+                        style="@style/black_00_18" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/check_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全马完赛证明"
+                        style="@style/black_00_18" />
+                </TableRow>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/black_00_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传图片" />
+
+            <ImageView
+                android:id="@+id/img_upload"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_img"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_create"
+            android:text="发起活动"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/white_32_normal"
+            android:background="@color/blue_022bb5_80"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+
+    </LinearLayout>
+</ScrollView>
 </android.support.constraint.ConstraintLayout>
