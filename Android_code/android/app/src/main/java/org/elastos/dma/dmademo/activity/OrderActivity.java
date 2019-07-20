@@ -31,6 +31,12 @@ public class OrderActivity extends AppCompatActivity {
                 finish();
             }
         });
+        findViewById(R.id.info_verify).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VerifyActivity.launch(OrderActivity.this);
+            }
+        });
     }
 
     public static void launch(Context context) {

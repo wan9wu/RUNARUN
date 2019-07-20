@@ -41,7 +41,7 @@ public class MyTicketAdapter extends RecyclerView.Adapter<MyTicketAdapter.MyTick
     @Override
     public void onBindViewHolder(@NonNull MyTicketAdapter.MyTicketViewHolder viewHolder, int i) {
         final Game game = games.get(i);
-        viewHolder.location.setText("上海");
+        viewHolder.location.setText("北京");
         viewHolder.time.setText("6月15日");
         viewHolder.title.setText(game.getName());
         viewHolder.bg.setOnClickListener(new View.OnClickListener() {
@@ -53,13 +53,13 @@ public class MyTicketAdapter extends RecyclerView.Adapter<MyTicketAdapter.MyTick
         viewHolder.give.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialogUtil.showUtil(mContext, "转出价", "确认转卖");
+                AlertDialogUtil.showUtil(mContext, "转出价", "确认转卖", true);
             }
         });
         viewHolder.sale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialogUtil.showUtil(mContext, "转赠人DID", "确认转增");
+                AlertDialogUtil.showUtil(mContext, "转赠人DID", "确认转赠", false);
 //                Toast.makeText(mContext, "赠送成功", Toast.LENGTH_LONG).show();
             }
         });

@@ -56,6 +56,12 @@ public class DetailActivity extends AppCompatActivity {
                 "</p>";
         WebView web_desc=findViewById(R.id.web_desc);
         web_desc.loadDataWithBaseURL(null,webHtml, "text/html", "uft-8",null);
+        findViewById(R.id.tv_sale).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OrderActivity.launch(DetailActivity.this);
+            }
+        });
     }
 
 
@@ -68,6 +74,5 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClass(DetailActivity.this, OrderActivity.class);
         startActivity(intent);
-
     }
 }

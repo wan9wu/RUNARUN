@@ -3,6 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:padding="20dp"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/alert_tv"
+        android:text="您即将按原价转出本票"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     
     <EditText
         android:id="@+id/dialog_input"

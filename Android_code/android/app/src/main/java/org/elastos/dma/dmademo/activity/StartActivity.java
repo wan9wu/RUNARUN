@@ -116,9 +116,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                         Waiter.initProgressDialog(mainActivity,"活动发布中...");
                         break;
                     case START_SUCCESS:{
-                        Intent intent = new Intent();
-                        intent.setClass(mainActivity, StartActivity.class);
-                        startActivity(intent);
+//                        finish();
+//                        Intent intent = new Intent();
+//                        intent.setClass(mainActivity, StartActivity.class);
+//                        startActivity(intent);
                         Waiter.alertErrorMessage("创建成功",mainActivity);
                         //跳转到成功页
                     }
@@ -376,6 +377,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 showSettingFaceDialog();
                 break;
             case R.id.btn_create:
+                btn_create.setText("正在上链，请耐心等待");
+                btn_create.setBackgroundColor(0xffFFC125);
+                btn_create.setEnabled(false);
                 deploy();
                 break;
         }

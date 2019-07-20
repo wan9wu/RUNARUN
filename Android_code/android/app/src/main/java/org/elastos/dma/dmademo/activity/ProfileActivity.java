@@ -28,6 +28,12 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
+        findViewById(R.id.profile_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public static void launch(Context context) {

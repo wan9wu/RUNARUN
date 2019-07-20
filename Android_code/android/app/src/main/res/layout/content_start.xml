@@ -174,7 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ETH"
+                        android:text="ELA"
                         style="@style/black_00_18" />
                 </TableRow>
 
@@ -209,7 +209,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="全马完赛证明"
+                        android:text="半马完赛证明"
                         style="@style/black_00_18" />
                 </TableRow>
             </LinearLayout>
@@ -237,7 +237,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ETH"
+                        android:text="ELA"
                         style="@style/black_00_18"/>
                 </TableRow>
 
@@ -271,7 +271,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="全马完赛证明"
+                        android:text="5KM完赛证明"
                         style="@style/black_00_18" />
                 </TableRow>
             </LinearLayout>
@@ -300,7 +300,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ETH"
+                        android:text="ELA"
                         style="@style/black_00_18"/>
                 </TableRow>
 
@@ -334,7 +334,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="全马完赛证明"
+                        android:text="3KM完赛证明"
                         style="@style/black_00_18" />
                 </TableRow>
             </LinearLayout>

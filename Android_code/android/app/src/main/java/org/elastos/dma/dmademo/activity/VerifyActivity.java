@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import org.elastos.dma.dmademo.R;
 
@@ -25,6 +26,13 @@ public class VerifyActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+        findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(VerifyActivity.this, "资质证明已提交上链，请耐心等待签名结果", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

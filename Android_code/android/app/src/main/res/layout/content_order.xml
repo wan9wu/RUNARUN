@@ -37,7 +37,6 @@
                 android:layout_weight="1"
                 android:text="全马票"
                 android:button="@null"
-                android:checked="true"
                 android:background="@drawable/check_selector"/>
             <TextView
                 android:layout_width="15dp"
@@ -75,7 +74,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="1 ETH"
+            android:text="1 ELA"
             style="@style/gray66_24_normal"/>
         <TextView
             android:layout_width="15dp"
@@ -85,7 +84,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="0.8 ETH"
+            android:text="0.8 ELA"
             style="@style/gray66_24_normal"/>
         <TextView
             android:layout_width="15dp"
@@ -95,13 +94,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="0.5 ETH"
+            android:text="0.5 ELA"
             style="@style/gray66_24_normal"
             />
 
     </LinearLayout>
     <TextView
-        android:text="参赛类型"
+        android:text="身份信息"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/blue022bb5_28_normal"
@@ -117,7 +116,7 @@
         android:paddingBottom="15dp">
         <TextView
             android:id="@+id/tv_name"
-            android:text="参赛者名字"
+            android:text="Jensen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/blue022bb5_54_normal"
@@ -135,6 +134,43 @@
             android:layout_marginRight="10dp"
             android:onClick="goprofile"/>
     </LinearLayout>
+
+    <TextView
+        android:text="资质"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/blue022bb5_28_normal"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_shap_blue_border"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+        <TextView
+            android:id="@+id/tv_verify"
+            android:text="资质满足"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/blue022bb5_54_normal"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/info_verify"
+            android:text="查看信息"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/blue022bb5_28_normal"
+            android:layout_marginRight="10dp"
+            android:onClick="goprofile"/>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv_createorder"
         android:text="提交订单"
@@ -151,6 +187,7 @@
  <TextView
      android:id="@+id/tv_onsalelist"
         android:text="查看转卖票"
+     android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/white_32_normal"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">dma-android-demo</string>
+    <string name="app_name">RUNARUN</string>
     <string name="package_name">org.elastos.dma.dmademo</string>
     <string name="input_username">请设置用户名</string>
 

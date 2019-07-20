@@ -10,7 +10,7 @@ import org.elastos.dma.dmademo.R;
 
 public class AlertDialogUtil {
 
-    public static void showUtil(Context context, String hint, String operator) {
+    public static void showUtil(Context context, String hint, String operator, boolean isSale) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final AlertDialog dialog = builder.create();
         View dialogView = View.inflate(context, R.layout.dialog_layout, null);
@@ -18,6 +18,14 @@ public class AlertDialogUtil {
         dialog.setView(dialogView);
         dialog.show();
         EditText input = (EditText) dialogView.findViewById(R.id.dialog_input);
+        TextView alert = (TextView) dialogView.findViewById(R.id.alert_tv);
+        if (isSale) {
+            input.setVisibility(View.GONE);
+            alert.setVisibility(View.VISIBLE);
+        } else {
+            alert.setVisibility(View.GONE);
+            input.setVisibility(View.VISIBLE);
+        }
         input.setHint(hint);
         final String name = input.getText().toString();
         TextView operate = dialogView.findViewById(R.id.dialog_operate);
