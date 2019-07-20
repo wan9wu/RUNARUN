@@ -11,9 +11,9 @@
     tools:showIn="@layout/activity_profile">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_profile"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"/>
 
@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:layout_marginLeft="10dp"
+            android:text="Jensen"
             android:background="@null" />
     </LinearLayout>
 
@@ -62,6 +63,7 @@
             style="@style/gray66_28_normal"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:text="15355498950"
             android:layout_marginLeft="10dp"
             android:background="@null" />
     </LinearLayout>
@@ -89,6 +91,7 @@
             style="@style/gray66_28_normal"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:text="jensenczx@gmail.com"
             android:layout_marginLeft="10dp"
             android:background="@null" />
     </LinearLayout>
@@ -116,6 +119,7 @@
             style="@style/gray66_28_normal"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:text="北京"
             android:layout_marginLeft="10dp"
             android:background="@null" />
     </LinearLayout>
