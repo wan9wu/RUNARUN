@@ -232,7 +232,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             protected Integer doInBackground(Void... params) {
                 Map<String, Object> map=new HashMap<String, Object>();
                 JsonResult<ETHMerchantServiceImpl.DeployResult> jsonResult=ethMerchantService.deploy(SystemConfig.privatekey,NodeClient.gasPrice,NodeClient.gasLimit,name,production,"");
-
+                Log.i("JsonResult", jsonResult.getMsg());
                 isPost=false;
                 if(jsonResult!=null&&jsonResult.getSuccess()&&jsonResult.getData()!=null){
                    String assetAddress=jsonResult.getData().getAssetAddress();
@@ -242,11 +242,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                    System.out.println("发布合约platformAddress===="+platformAddress);
                    if(assetAddress!=null&&platformAddress!=null){
                        //提交本地网络请求
-//
+                       Log.i("DeployStorage", "Net");
                        deployStorage(name,production,condition,qm_price,qm_num,"0","",assetAddress,platformAddress);
                    }
                }
-
                 return 1;
             }
             protected void onPostExecute(Integer result) {

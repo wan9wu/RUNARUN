@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            SearchActivity.launch(HomeActivity.this);
+            //SearchActivity.launch(HomeActivity.this);
             return true;
         }
 

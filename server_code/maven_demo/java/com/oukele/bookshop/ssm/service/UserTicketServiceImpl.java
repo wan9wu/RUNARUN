@@ -41,7 +41,16 @@ public class UserTicketServiceImpl implements UserTicketService {
 	@Override
 	public void updateUserTicketState(UserTicket userticket) {
 		// TODO Auto-generated method stub
-		userTicketDao.updateTicketState(userticket);
+		userTicketDao.updateUserTicketState(userticket);
 	}
 
+	@Override
+	public List<UserTicket> listTicketByTicketId(UserTicket userticket) {
+		// TODO Auto-generated method stub
+		return userTicketDao.listTicketByTicketId(userticket);
+	}
+	
+	
+	
+	
 }

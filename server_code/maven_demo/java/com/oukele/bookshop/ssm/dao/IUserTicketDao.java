@@ -17,6 +17,13 @@ public interface IUserTicketDao {
 	List<UserTicket> listTicketByDid(UserTicket userticket);
 	
 	/**
+	 * 转售列表
+	 * @param userticket
+	 * @return
+	 */
+	List<UserTicket> listTicketByTicketId(UserTicket userticket);
+	
+	/**
 	 * 查询待更新状态的链上记录
 	 * @return
 	 */
@@ -33,5 +40,5 @@ public interface IUserTicketDao {
 	 * 异步更新票务持有状态
 	 * @param userticket
 	 */
-	void updateTicketState(UserTicket userticket);
+	void updateUserTicketState(UserTicket userticket);
 }
