@@ -8,16 +8,23 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
+
 import org.elastos.dma.dmademo.adapter.HomeFeedAdapter;
 import org.elastos.dma.dmademo.bean.Game;
-import org.elastos.dma.dmademo.net.MyTask;
+import org.elastos.dma.dmademo.net.HttpEngine;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,7 +70,7 @@ public class HomeFragment extends Fragment {
         });
         mAdapter = new HomeFeedAdapter(getContext());
         mList.setAdapter(mAdapter);
-        mAdapter.setGames(mockData());
+        getGames();
     }
 
     private List<Game> mockData() {
@@ -78,18 +85,33 @@ public class HomeFragment extends Fragment {
     }
 
     private void getGames() {
-        AsyncTask task = new MyTask() {
+        new AsyncTask<Void, Void, String>(){
             @Override
-            protected void onPostExecute(String result) {
-                super.onPostExecute(result);
-            }
+            protected String doInBackground(Void... params) {
+                Response response = HttpEngine.sendGetRequest("/maven_demo/qryTicketList.do", null);
+                try {
+                    if (response == null) {
+                        return null;
+                    } else {
+                        String result = response.body().string();
 
-            @Override
-            protected String doInBackground(String... params) {
-                return super.doInBackground(params);
+                        Log.i("Result", result);
+                        return result;
+                    }
+                } catch (IOException e) {
+
+                }
+                return null;
             }
-        };
-        task.execute();
+            protected void onPostExecute(String returnJson) {
+                if (returnJson == null) {
+                    mAdapter.setGames(mockData());
+                } else {
+                    List<Game> result = JSON.parseArray(returnJson, Game.class);
+                    mAdapter.setGames(result);
+                }
+            };
+        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     @Override
