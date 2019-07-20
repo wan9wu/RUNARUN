@@ -92,7 +92,7 @@
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_message">我的消息</string>
     <string name="title_activity_profile">个人信息</string>
-    <string name="title_activity_verify">VerifyActivity</string>
+    <string name="title_activity_verify">资质证明</string>
     <string name="title_activity_my_ticket">已购票务</string>
 
     <!-- TODO: Remove or change this placeholder text -->

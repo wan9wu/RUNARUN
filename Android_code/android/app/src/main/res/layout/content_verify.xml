@@ -1,11 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.VerifyActivity"
     tools:showIn="@layout/activity_verify">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <TextView
+            style="@style/black_00_28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#002BB5"
+            android:text="标题" />
+
+        <EditText
+            android:id="@+id/verfiy_title"
+            style="@style/gray66_28_normal"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#002BB5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="上传图片"/>
+
+    <ImageView
+        android:id="@+id/img_upload"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/add_img"
+        android:layout_marginTop="10dp"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/update"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#002BB5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="历史赛事证明"/>
+
+    <RelativeLayout
+        android:id="@+id/my_activity_bg"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:background="#002BB5"
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_activity_title"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="怡乐园"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_activity_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:text="上海"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/item_activity_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="6月3日"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
