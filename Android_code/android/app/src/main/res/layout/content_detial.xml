@@ -6,6 +6,41 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.DetailActivity"
-    tools:showIn="@layout/activity_detial">
+    tools:showIn="@layout/activity_detial"
+    tools:ignore="MissingDefaultResource">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <WebView
+            android:id="@+id/web_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:ignore="WebViewLayout"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+        <LinearLayout
+            android:id="@+id/lin_sale"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/blue_022bb5"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tv_sale"
+                style="@style/white_32_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="参加活动"
+                android:onClick="goOrder"/>
 
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
 </android.support.constraint.ConstraintLayout>

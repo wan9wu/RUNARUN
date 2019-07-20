@@ -61,9 +61,14 @@
             android:name=".activity.StartActivity"
             android:label="@string/title_activity_start"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden" />/>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.ResultActivity"
+            android:label="@string/title_activity_start"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.OrderActivity"
             android:label="@string/title_activity_start"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
