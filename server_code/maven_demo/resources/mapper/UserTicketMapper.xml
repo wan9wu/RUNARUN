@@ -13,7 +13,18 @@
 	
     <!-- 查询用户已报名列表  -->
     <select id="listTicketByDid" resultType="com.oukele.bookshop.ssm.entity.UserTicket">
-        select * from UserTicket where did=#{did}
+        SELECT * FROM USERTICKET WHERE DID=#{did} AND REMARK IN (1, 6)
     </select>
-
+	
+	<!-- 0:购买上链中    2：转让上链中   5：转售上链中 -->
+	<select id="listUserTicketStatus" resultType="com.oukele.bookshop.ssm.entity.UserTicket">
+        SELECT * FROM USERTICKET WHERE REMARK IN(0,2,5)
+    </select>
+	
+	<!-- 异步更新票务持有状态 -->
+	<update id="updateTicketState" parameterType="com.oukele.bookshop.ssm.entity.UserTicket">
+        UPDATE TICKET SET REMARK=#{remark} WHERE DID=#{did} AND HADDRESS=#{haddress}
+    </update>
+	
+	
 </mapper>

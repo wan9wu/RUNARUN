@@ -30,4 +30,18 @@ public class UserTicketServiceImpl implements UserTicketService {
 		userTicketDao.addUserTicket(userticket);
 	}
 
+	/**
+	 * 查询区块链待更新记录
+	 */
+	@Override
+	public List<UserTicket> listUserTicketStatus() {
+		return userTicketDao.listUserTicketStatus();
+	}
+
+	@Override
+	public void updateUserTicketState(UserTicket userticket) {
+		// TODO Auto-generated method stub
+		userTicketDao.updateTicketState(userticket);
+	}
+
 }

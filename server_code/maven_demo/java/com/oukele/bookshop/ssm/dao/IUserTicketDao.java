@@ -15,11 +15,23 @@ public interface IUserTicketDao {
 	 * @return
 	 */
 	List<UserTicket> listTicketByDid(UserTicket userticket);
-
+	
+	/**
+	 * 查询待更新状态的链上记录
+	 * @return
+	 */
+	List<UserTicket> listUserTicketStatus();
+	
 	/**
 	 * 用户参加票务活动
 	 * 
 	 * @param ticket
 	 */
 	void addUserTicket(UserTicket userticket);
+	
+	/**
+	 * 异步更新票务持有状态
+	 * @param userticket
+	 */
+	void updateTicketState(UserTicket userticket);
 }

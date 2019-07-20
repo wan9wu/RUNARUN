@@ -13,6 +13,7 @@ public class Ticket {
 	private String condition;
 	private String price;
 	private String count;
+	/*票務狀態： 默认-0     已发布-1   已上架-2 */
 	private String remark;
 	private String hashaddress;
 	private String trestaddress;
