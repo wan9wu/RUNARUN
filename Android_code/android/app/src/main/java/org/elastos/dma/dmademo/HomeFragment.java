@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         mList = view.findViewById(R.id.home_feed);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         mList.setLayoutManager(layoutManager);
-        mAdapter = new HomeFeedAdapter();
+        mAdapter = new HomeFeedAdapter(getContext());
         mList.setAdapter(mAdapter);
     }
 
@@ -60,7 +60,6 @@ public class HomeFragment extends Fragment {
             }
         };
         task.execute();
-//        Response response = HttpEngine.sendGetRequest()
     }
 
     @Override

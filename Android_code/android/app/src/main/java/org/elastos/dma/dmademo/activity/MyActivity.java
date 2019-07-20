@@ -24,7 +24,6 @@ public class MyActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     public static void launch(Context context) {
