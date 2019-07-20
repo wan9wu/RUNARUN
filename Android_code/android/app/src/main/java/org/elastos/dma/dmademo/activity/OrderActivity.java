@@ -48,8 +48,9 @@ public class OrderActivity extends AppCompatActivity {
                         //跳转到成功页
                         Intent intent = new Intent();
                         intent.setClass(OrderActivity.this, ResultActivity.class);
+                        intent.putExtra("title","支付成功");
                         startActivity(intent);
-                        Waiter.alertErrorMessage("提交成功，等待交易完成",getApplicationContext());
+                        Waiter.alertErrorMessage("支付成功，等待交易完成",getApplicationContext());
 
                     }
                     break;
