@@ -14,6 +14,9 @@
 
 [以后再转让马拉松名额将被终身禁赛!](http://www.sohu.com/a/121887520_114613)
 
+## 视频介绍
+[YOUTUBE](https://youtu.be/3VqscdUhTYI)
+
 ## 团队成员
 
 - 队长：辛卫民（星哥）
