@@ -17,6 +17,8 @@
 ## 视频介绍
 [YOUTUBE](https://youtu.be/3VqscdUhTYI)
 
+[BILIBILI](https://www.bilibili.com/video/av60211937/)
+
 ## 团队成员
 
 - 队长：辛卫民（星哥）
