@@ -59,3 +59,12 @@
 - 资深用户、实际痛点、真实应用场景
 - 快速实现（基于ElastosDMA SDK）
 - 可商业落地
+
+## 未来计划
+- 我们希望能够不断完善这一项目，创造出更多的价值。
+- 我们希望更多的社区成员加入我们，一起推进这一项目。
+
+## 打赏地址
+- ELA:
+  - ENJociBayaVeC51ztqn3P4JWwXp3D9fj3K
+  - ![ELA_QR_code](Team/ELA_QR_code_ENJociBayaVeC51ztqn3P4JWwXp3D9fj3K.jpg)
